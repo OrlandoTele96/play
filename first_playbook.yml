@@ -1,8 +1,9 @@
 ---
+- hosts: Dev
+  become: no
+  gather_facts: yes
 
-- name: Play 1
-  hosts: Dev
   tasks:
-      - name: Excute date
-        command: date
-        msg: "date" 
+   - name: Display the current timestamp in YYYY-MM-DD
+     debug:
+      var=ansible_date_time.date
