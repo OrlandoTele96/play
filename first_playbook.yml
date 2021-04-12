@@ -1,5 +1,5 @@
 ---
-- hosts: Dev
+- hosts: all
   become: no
   gather_facts: yes
 
