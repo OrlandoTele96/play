@@ -1,0 +1,8 @@
+---
+
+- name: Play 1
+  hosts: Dev
+  tasks:
+    - name: Excute date
+      command: date
+      msg: "date" 
