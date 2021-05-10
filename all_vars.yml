@@ -6,5 +6,5 @@
 - cluster: hpe
 
 # VM vars
-- vm_name: JOGG-VM1
+- vm_name: VM1-JOGG
 - folder: /Nativitas/hpe/
