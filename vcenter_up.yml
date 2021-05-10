@@ -1,0 +1,16 @@
+---
+- name: vCenter up test
+  hosts: localhost
+  gather_facts: False
+  vars_files:
+    - all_vars.yml
+  tasks:
+    - name: Poweron virtual machine name {{ vm_name }}
+      vmware_guest_powerstate:
+        name: "{{ vm_name }}"
+        hostname: "{{ vcenter_server }}"
+        username: "{{ vcenter_user }}"
+        password: "{{ vcenter_pass }}"
+        validate_certs: False
+        folder: "{{ folder }}"
+        state: powered-on
