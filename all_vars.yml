@@ -1,0 +1,10 @@
+# vCenter vars
+- vcenter_server: 192.168.1.205
+- vcenter_user: jgonzalez@ipcom.int
+- vcenter_pass: Ipc0m21
+- datacenter: Nativitas
+- cluster: hpe
+
+# VM vars
+- vm_name: JOGG-VM1
+- folder: /Nativitas/hpe/
