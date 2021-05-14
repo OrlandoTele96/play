@@ -12,6 +12,6 @@
         username: "{{ lookup('env', 'VMWARE_USER') }}"
         password: "{{ lookup('env', 'VMWARE_PASSWORD') }}"
         validate_certs: False
-        folder: "{{ folder }}"
+        folder: /Nativitas/hpe/
         state: powered-off
         
