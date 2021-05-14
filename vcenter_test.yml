@@ -1,6 +1,6 @@
 ---
 - name: vCenter test
-  hosts: localhost
+  hosts: "{{invenotry_hostname}}"
   gather_facts: False
   vars_files:
     - all_vars.yml
