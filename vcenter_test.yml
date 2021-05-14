@@ -4,29 +4,10 @@
   gather_facts: False
   vars_files:
     - all_vars.yml
-    - off-list.yml
   tasks:
-    - name: Poweroff virtual machine name {{ vm_name1 }}
+    - name: Poweroff virtual machine name {{ inventory_hostname }}
       vmware_guest_powerstate:
-        name: "{{ vm_name1 }}"
-        hostname: "{{ vcenter_server }}"
-        username: "{{ vcenter_user }}"
-        password: "{{ vcenter_pass }}"
-        validate_certs: False
-        folder: "{{ folder }}"
-        state: powered-off
-    - name: Poweroff virtual machine name {{ vm_name2 }}
-      vmware_guest_powerstate:
-        name: "{{ vm_name2 }}"
-        hostname: "{{ vcenter_server }}"
-        username: "{{ vcenter_user }}"
-        password: "{{ vcenter_pass }}"
-        validate_certs: False
-        folder: "{{ folder }}"
-        state: powered-off
-    - name: Poweroff virtual machine name {{ vm_name3 }}
-      vmware_guest_powerstate:
-        name: "{{ vm_name3 }}"
+        name: "{{ inventory_hostname }}"
         hostname: "{{ vcenter_server }}"
         username: "{{ vcenter_user }}"
         password: "{{ vcenter_pass }}"

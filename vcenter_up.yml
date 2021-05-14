@@ -5,9 +5,9 @@
   vars_files:
     - all_vars.yml
   tasks:
-    - name: Poweron virtual machine name {{ vm_name }}
+    - name: Poweron virtual machine name {{ inventory_hostname }}
       vmware_guest_powerstate:
-        name: "{{ vm_name }}"
+        name: "{{ inventory_hostname }}"
         hostname: "{{ vcenter_server }}"
         username: "{{ vcenter_user }}"
         password: "{{ vcenter_pass }}"
