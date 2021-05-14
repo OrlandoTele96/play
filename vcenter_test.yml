@@ -24,4 +24,13 @@
         validate_certs: False
         folder: "{{ folder }}"
         state: powered-off
+    - name: Poweroff virtual machine name {{ vm_name3 }}
+      vmware_guest_powerstate:
+        name: "{{ vm_name3 }}"
+        hostname: "{{ vcenter_server }}"
+        username: "{{ vcenter_user }}"
+        password: "{{ vcenter_pass }}"
+        validate_certs: False
+        folder: "{{ folder }}"
+        state: powered-off
         
