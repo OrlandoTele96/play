@@ -2,8 +2,6 @@
 - name: vCenter test
   hosts: localhost
   gather_facts: False
-  vars_files:
-    - off-list.yml
   tasks:
     - name: Poweroff virtual machine name {{'query(inventory_hostname','rhel7_64Guest')}}
       vmware_guest_powerstate:
