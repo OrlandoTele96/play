@@ -3,9 +3,9 @@
   hosts: localhost
   gather_facts: False
   tasks:
-    - name: Poweroff virtual machine name {{'query(inventory_hostname','rhel7_64Guest')}}
+    - name: Poweroff virtual machine name {{query('inventory_hostname','rhel7_64Guest')}}
       vmware_guest_powerstate:
-        name: "{{'query(inventory_hostname','rhel7_64Guest')}}"
+        name: "{{query('inventory_hostname','rhel7_64Guest')}}"
         hostname: "{{ lookup('env', 'VMWARE_HOST') }}"
         username: "{{ lookup('env', 'VMWARE_USER') }}"
         password: "{{ lookup('env', 'VMWARE_PASSWORD') }}"
