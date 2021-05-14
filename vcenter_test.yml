@@ -4,13 +4,25 @@
   gather_facts: False
   vars_files:
     - off-list.yml
+  hostname: "{{ lookup('env', 'VMWARE_HOST') }}"
+  username: "{{ lookup('env', 'VMWARE_USER') }}"
+  password: "{{ lookup('env', 'VMWARE_PASSWORD') }}"
   tasks:
     - name: Poweroff virtual machine name {{ vm_name1 }}
       vmware_guest_powerstate:
         name: "{{ vm_name1 }}"
-        hostname: "{{ lookup('env', 'VMWARE_HOST') }}"
-        username: "{{ lookup('env', 'VMWARE_USER') }}"
-        password: "{{ lookup('env', 'VMWARE_PASSWORD') }}"
+        validate_certs: False
+        folder: /Nativitas/hpe/
+        state: powered-off
+    - name: Poweroff virtual machine name {{ vm_name2 }}
+      vmware_guest_powerstate:
+        name: "{{ vm_name2 }}"
+        validate_certs: False
+        folder: /Nativitas/hpe/
+        state: powered-off
+    - name: Poweroff virtual machine name {{ vm_name3 }}
+      vmware_guest_powerstate:
+        name: "{{ vm_name3}}"
         validate_certs: False
         folder: /Nativitas/hpe/
         state: powered-off
