@@ -4,7 +4,10 @@
 - vcenter_pass: Ipc0m21
 - datacenter: Nativitas
 - cluster: hpe
+- folder: /Nativitas/hpe/
 
 # VM vars
-- vm_name: VM1-JOGG
-- folder: /Nativitas/hpe/
+[vm_name]
+VM1-JOGG
+VM2-JOGG
+
