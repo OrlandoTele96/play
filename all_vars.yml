@@ -8,6 +8,6 @@
 
 # VM vars
 [vm_name]
-VM1-JOGG
-VM2-JOGG
+vm_name1: VM1-JOGG
+vm_name2: VM2-JOGG
 
