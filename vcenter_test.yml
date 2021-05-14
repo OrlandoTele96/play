@@ -5,9 +5,20 @@
   vars_files:
     - all_vars.yml
   tasks:
-    - name: Poweroff virtual machine name {{ vm_name }}
+    - name: Poweroff virtual machine name VM1-JOGG
       vmware_guest_powerstate:
-        name: "{{ vm_name }}"
+        name: VM1-JOGG
+        hostname: "{{ vcenter_server }}"
+        username: "{{ vcenter_user }}"
+        password: "{{ vcenter_pass }}"
+        validate_certs: False
+        folder: "{{ folder }}"
+        state: powered-off
+
+  tasks:
+    - name: Poweroff virtual machine name VM2-JOGG
+      vmware_guest_powerstate:
+        name: VM2-JOGG
         hostname: "{{ vcenter_server }}"
         username: "{{ vcenter_user }}"
         password: "{{ vcenter_pass }}"
