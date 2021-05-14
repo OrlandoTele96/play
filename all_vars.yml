@@ -7,7 +7,6 @@
 - folder: /Nativitas/hpe/
 
 # VM vars
-[vm_name]
 vm_name1: VM1-JOGG
 vm_name2: VM2-JOGG
 
