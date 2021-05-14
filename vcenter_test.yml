@@ -5,9 +5,9 @@
   vars_files:
     - off-list.yml
   tasks:
-    - name: Poweroff virtual machine name {{inventory_hostname}}
+    - name: Poweroff virtual machine name {{'query(inventory_hostname','rhel7_64Guest')}}
       vmware_guest_powerstate:
-        name: "{{ inventory_hostname }}"
+        name: "{{'query(inventory_hostname','rhel7_64Guest')}}"
         hostname: "{{ lookup('env', 'VMWARE_HOST') }}"
         username: "{{ lookup('env', 'VMWARE_USER') }}"
         password: "{{ lookup('env', 'VMWARE_PASSWORD') }}"
